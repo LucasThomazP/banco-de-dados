@@ -1,0 +1,28 @@
+CREATE TABLE mercadoria (
+	id_produto INTEGER NOT NULL,
+	nome_produto CHAR(40),
+	marca_produto CHAR(40),
+	PRIMARY KEY(id_produto)
+	);
+
+CREATE TABLE estoque (
+	id_produto INTEGER NOT NULL,
+	nome_produto CHAR(40),
+	marca_produto CHAR(40),
+	preco_venda INTEGER NOT NULL,
+	FOREIGN KEY(id_produto) REFERENCES mercadoria (id_produto)
+);
+
+CREATE TABLE saida(
+	id_produto INTEGER NOT NULL,
+	nome_produto CHAR (40),
+	marca_produto CHAR (40),
+	preco_venda INTEGER NOT NULL,
+	FOREIGN KEY(id_produto) REFERENCES mercadoria (id_produto)
+);
+
+CREATE TABLE fornecedor(
+	id_fornecedor INTEGER NOT NULL,
+	nome_fornecedor CHAR (40),
+	PRIMARY KEY (id_fornecedor)
+);
